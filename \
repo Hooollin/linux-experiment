@@ -1,0 +1,18 @@
+#include "A.h" 
+
+class SerializerForAs{
+
+    public:
+        bool SerializerForAs(const char* p, vector<A>& v){
+            int n = v.size();
+            ofstream of(p);
+            // record the size of the A;
+            p << n << " ";
+            for(int i = 0; i < n; i++){
+                p << v[i].i << " ";
+            }
+        }
+
+    private:
+
+};
