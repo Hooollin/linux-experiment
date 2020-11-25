@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include "ILSerializable.h"
@@ -20,8 +21,8 @@ class B : public ILSerializable{
             char buf[1000];
             int len = sizeof(*this);
             infile.read(buf, len);
-            ILSerializable *ils = new B(*(B*)buf);
-            return ils;
+            B *b = new B(*(B*)buf);
+            return b;
         }
 
 
