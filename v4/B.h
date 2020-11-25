@@ -18,7 +18,7 @@ class B : public ILSerializable{
         ILSerializable* deserialize(const char *p) override {
             ifstream infile(p);
             char buf[1000];
-            int len = sizeof(int);
+            int len = sizeof(*this);
             infile.read(buf, len);
             ILSerializable *ils = new B(*(B*)buf);
             return ils;
