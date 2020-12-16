@@ -8,21 +8,15 @@ const int FUNC_ID = 1;
 class CPrintPlugin : public IPrintPlugin{
 
 public:
-    CPrintPlugin(){
+    CPrintPlugin(){}
 
-    }
+    virtual ~CPrintPlugin(){}
 
-    virtual ~CPrintPlugin(){
-
-    }
-
-    virtual void Print()
-    {
+    virtual void Print(){
         cout << "Hello World!" << endl;
     }
 
-    virtual void Help()
-    {
+    virtual void Help(){
         cout << "Function ID " << FUNC_ID << " : This function will print hello world." << endl;
     }
 
