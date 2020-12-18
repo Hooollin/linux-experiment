@@ -29,9 +29,8 @@ int main(){
     mos.serialize("data", v);
     mos.deserialize("data", dv);
     for(int i = 0; i < n; i++){
-        printf("%d, %d\n", dv[i].type, *(int*)dv[i].pObj);
-        if(dv[i].type == 0){
-        }
+        //printf("%d, %d\n", dv[i].type, *(int*)dv[i].pObj);
+        printf("%c: %d\n", dv[i].type == 0 ? 'A' : 'B', *(int*)dv[i].pObj);
     }
     return 0;
 }
