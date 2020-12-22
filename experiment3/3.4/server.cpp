@@ -71,7 +71,7 @@ int RunTCPServer(TCPServer ServerFunction, int nPort, int nLengthOfQueueOfListen
 
 void MyServer(int nConnectedSocket, int nListenSocket)
 {
-    ::write(nConnectedSocket, "Hello World\n", 13);
+    ::write(nConnectedSocket, "Hello Hollin\n", 14);
 }
 
 int main()

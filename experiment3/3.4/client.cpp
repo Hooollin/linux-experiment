@@ -45,9 +45,9 @@ int RunTCPClient(TCPClient ClientFunction, int nServerPort, const char *strServe
 
 void MyClient(int nConnectedSocket)
 {
-    char buf[13];
+    char buf[14];
     
-    ::read(nConnectedSocket, buf, 13);
+    ::read(nConnectedSocket, buf, 14);
 
     std::cout << buf << std::endl;
 }
