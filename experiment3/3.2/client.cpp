@@ -48,6 +48,7 @@ class TCPClient{
             execute(client);
 
             close(client);
+            return 0;
         }
         virtual void execute(int client){
 
@@ -71,7 +72,7 @@ class MyTCPClient : public TCPClient{
 };
 
 int main(){
-    char* ip = "127.0.0.1";
+    char* ip = strdup("127.0.0.1");
     int port = 4000;
     TCPClient *client = new MyTCPClient(ip, port);
     client->run();
