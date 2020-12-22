@@ -70,7 +70,7 @@ class MyTCPServer: public TCPServer{
         MyTCPServer(int port):TCPServer(port){}
 
         void execute(int client) override{
-            char buf[1024] = "Hello Hoolin";
+            char buf[1024] = "Hello Hollin";
             write(client, buf, 12);
         }
 };
