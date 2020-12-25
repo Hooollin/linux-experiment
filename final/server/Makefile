@@ -1,8 +1,5 @@
-target server: server.o
-	g++ server.o -o server
-
-server.o: 
-	g++ -c server.cpp
+target server: 
+	g++ server.cpp CPluginController.cpp CPluginEnumerator.cpp plugin/EncryptionPlugin.cpp -o server -ldl
 
 clean:
 	rm *.o
