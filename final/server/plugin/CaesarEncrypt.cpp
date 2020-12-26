@@ -1,53 +1,47 @@
 #include "EncryptionPlugin.h"
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <string>
 
 using namespace std;
 
 const int FUNC_ID = 1;
 
-class CaesarEncrypt : public EncryptionPlugin{
+class CaesarEncrypt : public EncryptionPlugin {
     public:
-        CaesarEncrypt(){
+        CaesarEncrypt() {}
 
-        }
+        ~CaesarEncrypt() {}
 
-        ~CaesarEncrypt(){
-
-        }
-
-        virtual string help(){
+        virtual string help() {
             return "Function ID: " + to_string(FUNC_ID) + ", Caesar encryption.\n";
         }
 
-        virtual string work(string input){
+        virtual string work(string input) {
             string encrypted;
-            for(auto ch : input){
-                    if(isalpha(ch)){
-                        encrypted += shift(ch);
-                    }else{
-                        encrypted += ch;
-                    }
+            for (auto ch : input) {
+                if (isalpha(ch)) {
+                    encrypted += shift(ch);
+                } else {
+                    encrypted += ch;
+                }
             }
             return encrypted;
         }
 
-        int getID(){
-            return FUNC_ID;
-        }
+        int getID() { return FUNC_ID; }
+
     private:
         int shiftAmount = 10;
 
-        char shift(char ch){
-            if(isupper(ch)) return 'A' + ((ch - 'A') + shiftAmount) % 26;
+        char shift(char ch) {
+            if (isupper(ch))
+                return 'A' + ((ch - 'A') + shiftAmount) % 26;
             return 'a' + ((ch - 'a') + shiftAmount) % 26;
         }
-
 };
 
-
-extern "C" void createObj(EncryptionPlugin **plugin){
+extern "C" void createObj(EncryptionPlugin **plugin) {
     static CaesarEncrypt encryptor;
     *plugin = &encryptor;
 }
