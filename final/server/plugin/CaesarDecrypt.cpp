@@ -32,7 +32,7 @@ class CaesarDecrypt : public EncryptionPlugin {
         int getID() { return FUNC_ID; }
 
     private:
-        int shiftAmount = 10;
+        int shiftAmount = 15;
 
         char shift(char ch) {
             if (isupper(ch))
